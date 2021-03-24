@@ -1,0 +1,48 @@
+{% load static %}
+          <!-- NAVBAR TOP -->
+<div class="topbar d-none d-sm-block">
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-12 col-md-5">
+                <div class="topbar-left">
+                    <div class="topbar-text">
+                        {% now 'D, M d, Y' %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-7">
+                <div class="list-unstyled topbar-right">
+                {% if datas.name %}
+                <ul class="topbar-link">
+                     <li><a href="#" title="">Career</a></li>
+                    <li><a href="#"><i class="fa fa-user-o"> {{datas.name}}</a></i>
+
+                </ul>
+                </div>
+            </div>
+                {% else %}
+                    <ul class="topbar-link">
+                        <li><a href="#" title="">Career</a></li>
+                        <li><a href="{% url 'register' %}" title="register">Contact Us</a></li>
+                        <li><a href="{% url 'login' %}" title="login">Login</a></li>
+                    </ul>
+                    <ul class="topbar-sosmed">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+
+                    </ul>
+                {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END NAVBAR TOP -->

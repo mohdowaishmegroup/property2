@@ -1,0 +1,16 @@
+from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
+from . import views
+from rest_framework import routers
+#
+router = routers.DefaultRouter()
+router.register('view', views.ListingView)
+
+urlpatterns = [
+    path('r/', include(router.urls)),
+    # path('listing', views.ListingView, name='listings'),
+    # path('<int:pk>', views.displaydata, name='listing'),
+    # path('search', views.search, name='search'),
+    path('displaydata',views.displaydata, name="view"),
+]
