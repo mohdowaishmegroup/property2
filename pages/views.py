@@ -3,13 +3,13 @@ from django .http import HttpResponse
 from listings.models import Listing
 from realtors.models import Realtor
 import requests,datetime
-
+from accounts.views import *
 def index(request):
 
     callapi=requests.get('http://127.0.0.1:8000/listings/r/view/')
     result=callapi.json()
     data=result['results']
-
+  
     return render(request,'pages/index.html',{'data':data})
 
 def about(request):

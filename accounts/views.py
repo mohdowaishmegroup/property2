@@ -149,8 +149,9 @@ class AdminLoginTokenObtainPairView(TokenObtainPairView):
         callapi=requests.get('http://127.0.0.1:8000/listings/r/view/')
         result=callapi.json()
         data=result['results']
-        # return Response(serializer.validated_data, status=200)
-        return render(request,'pages/index.html',{'datas':datas,'data':data})
+        # return redirect('dashbord')
+        # return render(request,'partials/_topbar.html',{'datas':datas,'data':data})
+        return Response(serializer.validated_data, status=200)
 # class SupplierLoginTokenObtainPairView(TokenObtainPairView):
 #     serializer_class = UserTokenObtainPairSerializer
 
